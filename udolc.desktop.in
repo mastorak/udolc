@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Udolc
+_Comment=Utility to create application launchers for Ubuntu Unity
+Categories=GNOME;Utility;
+Exec=udolc
+Icon=/usr/share/udolc/media/udolc.svg
+Terminal=false
+Type=Application
