@@ -6,4 +6,27 @@ else
 	dh $@ --with python2
 endif
 
+override_dh_auto_install:
+	dh_auto_install -- --install-scripts=/opt/extras.ubuntu.com/udolc/bin                 --install-data=/opt/extras.ubuntu.com/udolc                 --install-lib=/opt/extras.ubuntu.com/udolc
 
+override_dh_python2:
+	dh_python2 /opt/extras.ubuntu.com/udolc
+
+
+override_dh_install:
+	dh_install
+	mkdir -p debian/udolc/opt/extras.ubuntu.com/udolc/bin
+	if [ -x debian/udolc/opt/extras.ubuntu.com/udolc/udolc/udolc ]; then mv debian/udolc/opt/extras.ubuntu.com/udolc/udolc/udolc debian/udolc/opt/extras.ubuntu.com/udolc/bin; fi
+	if [ -f debian/udolc/opt/extras.ubuntu.com/udolc/share/applications/udolc.desktop ]; then \
+		mkdir -p debian/udolc/usr/share/applications; \
+		mv debian/udolc/opt/extras.ubuntu.com/udolc/share/applications/udolc.desktop debian/udolc/usr/share/applications/extras-udolc.desktop; \
+		rmdir --ignore-fail-on-non-empty debian/udolc/opt/extras.ubuntu.com/udolc/share/applications; \
+		sed -i 's|Exec=[^ ]*|Exec=/opt/extras.ubuntu.com/udolc/bin/udolc|' debian/udolc/usr/share/applications/extras-udolc.desktop; \
+		sed -i 's|Icon=/usr/|Icon=/opt/extras.ubuntu.com/udolc/|' debian/udolc/usr/share/applications/extras-udolc.desktop; \
+	fi
+	grep -RlZ 'import gettext' debian/udolc/* | xargs -0 -r sed -i 's|\(import\) gettext$$|\1 locale|'
+	grep -RlZ 'from gettext import gettext as _' debian/udolc/* | xargs -0 -r sed -i 's|from gettext \(import gettext as _\)|from locale \1|'
+	grep -RlZ "gettext.textdomain('udolc')" debian/udolc/* | xargs -0 -r sed -i "s|gettext\(\.textdomain('udolc')\)|locale\.bindtextdomain('udolc', '/opt/extras.ubuntu.com/udolc/share/locale')\nlocale\1|" 
+	sed -i "s|__udolc_data_directory__ =.*|__udolc_data_directory__ = '/opt/extras.ubuntu.com/udolc/share/udolc/'|" debian/udolc/opt/extras.ubuntu.com/udolc/udolc*/udolcconfig.py
+	sed -i 's|        sys.path.insert(0, opt_path)|\0\n    os.putenv("XDG_DATA_DIRS", "%s:%s" % ("/opt/extras.ubuntu.com/udolc/share/", os.getenv("XDG_DATA_DIRS", "")))|' debian/udolc/opt/extras.ubuntu.com/udolc/bin/udolc
+	if [ -d debian/udolc/opt/extras.ubuntu.com/udolc/share/glib-2.0/schemas ]; then glib-compile-schemas debian/udolc/opt/extras.ubuntu.com/udolc/share/glib-2.0/schemas; fi

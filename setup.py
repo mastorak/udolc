@@ -1,7 +1,18 @@
 #!/usr/bin/env python
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
-# This file is in the public domain
+# Copyright (C) 2013 <Konstantinos Mastorakis> <mastorak at gmail dot com>
+# This program is free software: you can redistribute it and/or modify it 
+# under the terms of the GNU General Public License version 3, as published 
+# by the Free Software Foundation.
+# 
+# This program is distributed in the hope that it will be useful, but 
+# WITHOUT ANY WARRANTY; without even the implied warranties of 
+# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR 
+# PURPOSE.  See the GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License along 
+# with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
 ###################### DO NOT TOUCH THIS (HEAD TO THE SECOND PART) ######################
@@ -76,13 +87,13 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='udolc',
-    version='0.1',
-    license='GPL v3',
+    version='13.04',
+    license='GPL-3',
     author='Konstantinos Mastorakis',
     author_email='mastorak@gmail.com',
     description='Utility to create application launchers for Ubuntu Unity',
     long_description='Udolc creates launchers that can be run from Ubuntu Unity dock and stores them in your ~/.local/share/applications/ folder ',
-    url='http://github.com/mastorak/udolc',
+    url='https://launchpad.net/udolc',
     cmdclass={'install': InstallAndUpdateDataDirectory}
     )
 

@@ -2,3 +2,4 @@ project = udolc
 version = 12.04
 template = ubuntu-application
 ppa = ppa
+lp_id = udolc
