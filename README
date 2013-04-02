@@ -1,0 +1,10 @@
+Udolc is a utility to create application launchers for Ubuntu Unity dock.
+
+It is build using the "quickly" development suit in Ubuntu using GTK and python
+
+From the main project directory:
+To edit the code use  the command "quickly edit"
+To edit the ui use the command "quickly design"
+To try the code use the command "quickly run"
+
+The main application window code can be found in udolc/UdolcWindow.py
