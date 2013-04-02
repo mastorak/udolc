@@ -1,8 +1,10 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: udolc
-Upstream-Contact: UNKNOWN <UNKNOWN>
-Source: UNKNOWN
+Upstream-Contact: Konstantinos Mastorakis <mastorak@gmail.com>
+Source: http://github.com/mastorak/udolc
 
 Files: *
 Copyright: (C) 2013 <Konstantinos Mastorakis> <mastorak at gmail dot com>
-License: UNKNOWN
+License: GPL v3
+ The full text of the GPL is distributed in
+ /usr/share/common-licenses/GPL-3 on Debian systems.

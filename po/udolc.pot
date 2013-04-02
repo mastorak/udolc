@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-02 11:23+0200\n"
+"POT-Creation-Date: 2013-04-02 18:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,18 +141,30 @@ msgid "Utility"
 msgstr ""
 
 #: ../data/ui/UdolcWindow.ui.h:27
-msgid "Reset"
+msgid "Developer"
 msgstr ""
 
 #: ../data/ui/UdolcWindow.ui.h:28
-msgid "Reset the launcher attributes"
+msgid "Office"
 msgstr ""
 
 #: ../data/ui/UdolcWindow.ui.h:29
-msgid "Save"
+msgid "Accessibility"
 msgstr ""
 
 #: ../data/ui/UdolcWindow.ui.h:30
+msgid "Reset"
+msgstr ""
+
+#: ../data/ui/UdolcWindow.ui.h:31
+msgid "Reset the launcher attributes"
+msgstr ""
+
+#: ../data/ui/UdolcWindow.ui.h:32
+msgid "Save"
+msgstr ""
+
+#: ../data/ui/UdolcWindow.ui.h:33
 msgid "Save the launcher"
 msgstr ""
 

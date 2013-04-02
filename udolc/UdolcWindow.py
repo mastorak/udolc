@@ -39,6 +39,10 @@ class UdolcWindow(Window):
         self.AboutDialog = AboutUdolcDialog
         
        
+        statusIcon = Gtk.StatusIcon()
+        statusIcon.set_from_file('data/media/udolc.svg')
+        statusIcon.set_visible(True)
+
         # Get widgets
         self.saveBtn=self.builder.get_object("saveBtn")
         self.resetBtn=self.builder.get_object("resetBtn")
@@ -50,7 +54,7 @@ class UdolcWindow(Window):
         self.typeCombo=self.builder.get_object("typeCombo")
 
         #Initialise widgets
-        self.iconSelect.set_filename("data/media/default_icon.png")
+        self.iconSelect.set_filename("/usr/share/udolc/media/default_icon.png")
         self.typeCombo.set_active(0) 
        
         
@@ -101,7 +105,7 @@ class UdolcWindow(Window):
         self.nameField.set_text("")
         self.commentField.set_text("")
         self.execField.set_text("")
-        self.iconSelect.set_filename("data/media/default_icon.png")
+        self.iconSelect.set_filename("/usr/share/udolc/media/default_icon.png")
         self.typeCombo.set_active(0) 
         
 

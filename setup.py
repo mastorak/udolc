@@ -77,12 +77,12 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 DistUtilsExtra.auto.setup(
     name='udolc',
     version='0.1',
-    #license='GPL-3',
-    #author='Konstantinos Mastorakis',
-    #author_email='mastorak@gmail.com',
-    #description='Utility to create application launchers for Ubuntu Unity',
-    #long_description='Udolc creates launchers that can be run from Ubuntu Unity dock and stores them in your ~/.local/share/applications/ folder ',
-    #url='https://launchpad.net/udolc',
+    license='GPL v3',
+    author='Konstantinos Mastorakis',
+    author_email='mastorak@gmail.com',
+    description='Utility to create application launchers for Ubuntu Unity',
+    long_description='Udolc creates launchers that can be run from Ubuntu Unity dock and stores them in your ~/.local/share/applications/ folder ',
+    url='http://github.com/mastorak/udolc',
     cmdclass={'install': InstallAndUpdateDataDirectory}
     )
 

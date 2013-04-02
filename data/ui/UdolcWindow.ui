@@ -266,6 +266,9 @@ Not Required</property>
                   <item translatable="yes">Accessories</item>
                   <item translatable="yes">Customization</item>
                   <item translatable="yes">Utility</item>
+                  <item translatable="yes">Developer</item>
+                  <item translatable="yes">Office</item>
+                  <item translatable="yes">Accessibility</item>
                 </items>
               </object>
               <packing>
